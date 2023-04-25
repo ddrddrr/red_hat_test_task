@@ -13,8 +13,10 @@
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        const now = new Date();
-        document.getElementById("time").innerHTML = now.getHours() + ":" + now.getMinutes();
+	window.setInterval(() => {
+		const now = new Date();
+			document.getElementById("time").innerHTML = now.toLocaleString(undefined, {hour:"numeric", minute:"numeric",second:"numeric"});
+	},1000);
     });
 </script>
 </html>
